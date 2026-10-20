@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interview Prep Tracker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1d232b; --muted: #5f6b7a; --line: #e2e6eb;
+  --accent: #157878; --accent-soft: #e3f2f1; --bar: #e9edf1;
+  --easy: #1a7f37; --medium: #b35900; --hard: #c62828;
+  --s-todo: #8a96a3; --s-done: #1a7f37; --s-help: #b35900; --s-redone: #2f6fd6; --s-skip: #8a96a3;
+  --warn-bg: #fff4e5; --warn: #8a4b00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111418; --card: #1a1f25; --text: #e6e9ed; --muted: #9aa5b1; --line: #2c333b;
+    --accent: #3fb6a8; --accent-soft: #17302e; --bar: #2a3139;
+    --easy: #4ac26b; --medium: #f0a04b; --hard: #ff6b6b;
+    --s-todo: #77838f; --s-done: #4ac26b; --s-help: #f0a04b; --s-redone: #6ea8ff; --s-skip: #77838f;
+    --warn-bg: #33270f; --warn: #f0c070;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--accent); }
+header.top { background: linear-gradient(120deg, #155799, #159957); color: #fff; padding: 20px 16px 16px; }
+header.top .wrap { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+header.top h1 { margin: 0; font-size: 22px; }
+header.top nav a { color: #fff; opacity: .9; margin-right: 14px; font-size: 14px; }
+.wrap { max-width: 1100px; margin: 0 auto; }
+main.wrap { padding: 16px; }
+.pill { border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.15); color: #fff; border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
+.pill .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: #ccc; }
+.pill[data-s="synced"] .dot { background: #6ee7a0; }
+.pill[data-s="saving"] .dot { background: #ffd166; }
+.pill[data-s="error"] .dot { background: #ff6b6b; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.stat .k { color: var(--muted); font-size: 13px; }
+.stat .v { font-size: 24px; font-weight: 650; margin: 2px 0 6px; }
+.stat .v small { font-size: 14px; color: var(--muted); font-weight: 500; }
+.bar { height: 6px; background: var(--bar); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.banner { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 14px; }
+.banner button { margin-left: 8px; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 16px; overflow-x: auto; }
+.tabs a { padding: 8px 14px; text-decoration: none; color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; font-weight: 550; }
+.tabs a.on { color: var(--accent); border-color: var(--accent); }
+h2 { font-size: 18px; margin: 0 0 4px; }
+h3 { font-size: 15px; margin: 0 0 10px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.grid2 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; align-items: start; }
+.stack > * + * { margin-top: 16px; }
+.grid2 > *, .stack > *, .prob > * { min-width: 0; }
+select { max-width: 100%; }
+button, select, input, textarea { font: inherit; color: var(--text); }
+button { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:hover { border-color: var(--accent); }
+select, input[type=text], input[type=number], input[type=password], textarea { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+input[type=number] { width: 70px; }
+.dayhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.dayhead .grow { flex: 1; min-width: 200px; }
+.tag { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.prob { display: grid; grid-template-columns: 150px 1fr 82px minmax(140px, .9fr); gap: 8px 10px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); }
+.prob:first-of-type { border-top: 0; }
+.prob .title a { text-decoration: none; font-weight: 550; }
+.prob .meta { font-size: 12.5px; color: var(--muted); }
+.prob input[type=text] { width: 100%; }
+.prob label.mins { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.prob label.mins input { width: 56px; }
+.d-Easy { color: var(--easy); font-weight: 600; }
+.d-Medium { color: var(--medium); font-weight: 600; }
+.d-Hard { color: var(--hard); font-weight: 600; }
+select.status { width: 100%; font-weight: 600; border-left: 4px solid var(--s-todo); }
+select.status[data-s="solved"] { border-left-color: var(--s-done); color: var(--s-done); }
+select.status[data-s="help"] { border-left-color: var(--s-help); color: var(--s-help); }
+select.status[data-s="redone"] { border-left-color: var(--s-redone); color: var(--s-redone); }
+select.status[data-s="skip"] { border-left-color: var(--s-skip); color: var(--s-skip); }
+.due { color: var(--s-help); font-weight: 600; }
+.item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--line); }
+.item:first-of-type { border-top: 0; }
+.item .body { flex: 1; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+.seg button { border: 0; border-radius: 0; padding: 3px 9px; font-size: 13px; color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on[data-v="done"] { background: var(--s-done); color: #fff; }
+.seg button.on[data-v="review"] { background: var(--s-help); color: #fff; }
+.seg button.on[data-v="todo"] { background: var(--bar); color: var(--text); }
+.insight { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.insight b { color: var(--text); font-weight: 600; }
+.check { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; cursor: pointer; }
+.check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--accent); }
+.check.done span { color: var(--muted); text-decoration: line-through; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.filters input[type=text] { flex: 1; min-width: 160px; }
+.patterns { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 6px 20px; }
+.patterns .row { display: grid; grid-template-columns: 1fr 48px; gap: 2px 8px; font-size: 13px; align-items: center; }
+.patterns .row .bar { grid-column: 1 / -1; }
+.daygroup { margin: 18px 0 4px; font-weight: 650; font-size: 14px; color: var(--muted); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; font-size: 12.5px; border-top: 0; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+tr.today td { background: var(--accent-soft); }
+tr.week td { font-weight: 650; background: var(--bg); }
+.mini { display: inline-block; width: 60px; vertical-align: middle; margin-left: 6px; }
+.scroll { overflow-x: auto; }
+dialog { border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--text); max-width: 520px; width: calc(100% - 32px); padding: 20px; }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog ol { padding-left: 20px; font-size: 14px; }
+dialog input[type=password] { width: 100%; margin: 6px 0 12px; }
+.row-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.empty { color: var(--muted); font-style: italic; padding: 8px 0; }
+footer { color: var(--muted); font-size: 13px; padding: 24px 16px 40px; text-align: center; }
+@media (max-width: 820px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .prob { grid-template-columns: 1fr auto; }
+  .prob .title { grid-column: 1 / -1; order: -1; }
+  .prob .note { grid-column: 1 / -1; }
+  .hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div>
+      <h1>Interview Prep Tracker</h1>
+      <nav><a href="../">Home</a><a href="../dsa/">DSA list</a><a href="../system-design/">System design</a></nav>
+    </div>
+    <button class="pill" id="sync" data-s="local" title="Sync settings"><span class="dot"></span><span id="syncText">Local only</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="banner"></div>
+  <div class="cards" id="summary"></div>
+  <nav class="tabs" id="tabs">
+    <a href="#today" data-t="today">Today</a>
+    <a href="#dsa" data-t="dsa">DSA problems</a>
+    <a href="#design" data-t="design">System design &amp; LLD</a>
+    <a href="#plan" data-t="plan">21-day plan</a>
+  </nav>
+  <section id="view"><p class="muted">Loading…</p></section>
+</main>
+
+<footer>
+  Progress saves in this browser as you go, and to the repo's <code>progress</code> branch when GitHub sync is on.
+  <div style="margin-top:8px"><button id="exportJson">Export JSON</button> <button id="exportCsv">Export CSV</button> <button id="importJson">Import JSON</button><input type="file" id="importFile" accept=".json,application/json" hidden></div>
+</footer>
+
+<dialog id="syncDialog">
+  <h2>Sync with GitHub</h2>
+  <p class="small muted">Saves your progress to <code>progress.json</code> on the <code>progress</code> branch of <a id="repoLink" target="_blank" rel="noopener"></a>, so it follows you across devices. Without a token, this page shows your last synced progress read-only and keeps edits in this browser only.</p>
+  <ol>
+    <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine-grained tokens → Generate new token</a>.</li>
+    <li>Repository access: <b>Only select repositories</b> → <code>interview-prep</code>.</li>
+    <li>Permissions → Repository → <b>Contents: Read and write</b>. Generate and copy the token.</li>
+  </ol>
+  <label class="small" for="tokenInput">Token (stored only in this browser)</label>
+  <input type="password" id="tokenInput" placeholder="github_pat_…" autocomplete="off">
+  <p class="small" id="syncMsg"></p>
+  <div class="row-actions">
+    <button id="disconnect">Disconnect</button>
+    <button id="closeDialog">Close</button>
+    <button class="primary" id="connect">Save &amp; sync</button>
+  </div>
+</dialog>
+
+<script>
+const CONFIG = {
+  owner: "AjaySingh10",
+  repo: "interview-prep",
+  branch: "progress",
+  path: "progress.json",
+  committer: { name: "AjaySingh10", email: "54677863+AjaySingh10@users.noreply.github.com" },
+};
+const LS_STATE = "iprep.state.v1", LS_TOKEN = "iprep.token", LS_UI = "iprep.ui";
+const STATUS = [
+  ["todo", "Not started"], ["solved", "Solved"], ["help", "Needed help"],
+  ["redone", "Redone"], ["skip", "Skipped"],
+];
+const SOLVED = new Set(["solved", "redone"]);
+const REDO_GAP_DAYS = 2;
+
+let DATA, state, ui;
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const mdLinks = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
+const pct = (a, b) => b ? Math.round(100 * a / b) : 0;
+const bar = (a, b) => `<div class="bar"><i style="width:${pct(a, b)}%"></i></div>`;
+
+function readLS(key, fallback) {
+  try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; }
+}
+function writeLS(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch {}
+}
+function token() { try { return localStorage.getItem(LS_TOKEN) || ""; } catch { return ""; } }
+
+// ---------- dates ----------
+function todayISO() {
+  const d = new Date();
+  return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+}
+function addDays(iso, n) {
+  const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10);
+}
+function daysBetween(a, b) { return Math.round((new Date(b + "T00:00:00Z") - new Date(a + "T00:00:00Z")) / 86400000); }
+function fmtDate(iso) {
+  return new Date(iso + "T00:00:00Z").toLocaleDateString(undefined, { day: "numeric", month: "short", timeZone: "UTC" });
+}
+function currentDay() {
+  const n = daysBetween(DATA.start, todayISO()) + 1;
+  return Math.min(Math.max(n, 1), DATA.days.length);
+}
+
+// ---------- state ----------
+function get(id) { return state.items[id] || {}; }
+function set(id, patch) {
+  state.items[id] = { ...get(id), ...patch, t: Date.now() };
+  state.updatedAt = Date.now();
+  writeLS(LS_STATE, state);
+  sync.schedule();
+}
+function merge(a, b) {
+  const items = { ...a.items };
+  for (const [k, v] of Object.entries(b.items || {})) if (!items[k] || (v.t || 0) > (items[k].t || 0)) items[k] = v;
+  return { v: 1, items, updatedAt: Math.max(a.updatedAt || 0, b.updatedAt || 0) };
+}
+function sameState(a, b) { return JSON.stringify(a.items) === JSON.stringify(b.items); }
+
+function probStatus(n) { return get("p" + n).s || "todo"; }
+function redoDue(n) {
+  const r = get("p" + n);
+  return r.s === "help" && r.d ? addDays(r.d, REDO_GAP_DAYS) : null;
+}
+function designItems(day) {
+  const d = DATA.days[day - 1];
+  return d.design.map((text, i) => ({ id: `d${day}.${i}`, text, day }));
+}
+function otherItems(day) {
+  const d = DATA.days[day - 1];
+  return d.other.map((text, i) => ({ id: `o${day}.${i}`, text, day }));
+}
+function dayStats(day) {
+  const probs = DATA.problems.filter(p => p.day === day);
+  const pDone = probs.filter(p => probStatus(p.n) !== "todo").length;
+  const items = [...designItems(day), ...otherItems(day)];
+  const iDone = items.filter(it => get(it.id).s === "done").length;
+  return { probs: probs.length, pDone, items: items.length, iDone, hours: Number(get("h" + day).v) || 0 };
+}
+
+// ---------- GitHub sync ----------
+const b64encode = s => { const bytes = new TextEncoder().encode(s); let bin = ""; for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000)); return btoa(bin); };
+const b64decode = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, "")), c => c.charCodeAt(0)));
+
+const sync = {
+  sha: null, timer: null, busy: false, again: false, lastPull: 0, dirty: false,
+  api() { return `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.path}`; },
+  headers() { return { Accept: "application/vnd.github+json", Authorization: `Bearer ${token()}`, "X-GitHub-Api-Version": "2022-11-28" }; },
+  status(s, text) { const el = $("#sync"); el.dataset.s = s; $("#syncText").textContent = text; },
+  idle() { token() ? this.status("synced", "Synced") : this.status("local", "Local only"); },
+
+  async fetchRemote() {
+    if (token()) {
+      const r = await fetch(`${this.api()}?ref=${CONFIG.branch}&t=${Date.now()}`, { headers: this.headers(), cache: "no-store" });
+      if (r.status === 404) { this.sha = null; return null; }
+      if (!r.ok) throw new Error(r.status === 401 ? "Token rejected (401)" : `GitHub returned ${r.status}`);
+      const j = await r.json(); this.sha = j.sha;
+      return JSON.parse(b64decode(j.content));
+    }
+    const r = await fetch(`https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${CONFIG.branch}/${CONFIG.path}?t=${Date.now()}`, { cache: "no-store" });
+    return r.ok ? r.json() : null;
+  },
+
+  async pull() {
+    this.lastPull = Date.now();
+    try {
+      if (token()) this.status("saving", "Syncing…");
+      const remote = await this.fetchRemote();
+      if (remote) {
+        const merged = merge(state, remote);
+        const changed = !sameState(merged, state);
+        state = merged; writeLS(LS_STATE, state);
+        if (changed) render();
+        if (token() && !sameState(merged, remote)) return this.push();
+      } else if (token() && Object.keys(state.items).length) {
+        return this.push();
+      }
+      this.idle();
+    } catch (e) { this.status("error", "Sync error"); console.warn(e); }
+  },
+
+  schedule() {
+    this.dirty = true;
+    if (!token()) return;
+    this.status("saving", "Saving…");
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => this.push(), 1500);
+  },
+
+  async push(attempt = 0) {
+    if (!token()) return;
+    if (this.busy) { this.again = true; return; }
+    this.busy = true; this.status("saving", "Saving…");
+    try {
+      const body = {
+        message: `Update progress (${Object.keys(state.items).length} items)`,
+        content: b64encode(JSON.stringify(state, null, 1) + "\n"),
+        branch: CONFIG.branch, committer: CONFIG.committer, author: CONFIG.committer,
+      };
+      if (this.sha) body.sha = this.sha;
+      const r = await fetch(this.api(), { method: "PUT", headers: this.headers(), body: JSON.stringify(body) });
+      if ((r.status === 409 || r.status === 422) && attempt < 3) {
+        // Someone (another device) saved first: merge their copy, then retry.
+        const remote = await this.fetchRemote();
+        if (remote) { state = merge(state, remote); writeLS(LS_STATE, state); render(); }
+        this.busy = false; return this.push(attempt + 1);
+      }
+      if (!r.ok) throw new Error(r.status === 401 ? "Token rejected (401)" : r.status === 403 || r.status === 404 ? "Token can't write to this repo" : `GitHub returned ${r.status}`);
+      this.sha = (await r.json()).content.sha;
+      this.dirty = false; this.idle();
+    } catch (e) {
+      this.status("error", "Sync error"); $("#syncMsg").textContent = e.message; console.warn(e);
+    } finally {
+      this.busy = false;
+      if (this.again) { this.again = false; this.push(); }
+    }
+  },
+};
+
+// ---------- rendering ----------
+function statusSelect(n) {
+  const s = probStatus(n);
+  return `<select class="status" data-p="${n}" data-s="${s}" aria-label="Status">${STATUS.map(([v, l]) => `<option value="${v}"${v === s ? " selected" : ""}>${l}</option>`).join("")}</select>`;
+}
+function probRow(p, showDay) {
+  const r = get("p" + p.n), due = redoDue(p.n), today = todayISO();
+  const dueTxt = due ? ` · <span class="${due <= today ? "due" : ""}">${due <= today ? "redo due" : "redo"} ${fmtDate(due)}</span>` : "";
+  const doneTxt = r.d && r.s !== "todo" ? ` · ${fmtDate(r.d)}` : "";
+  return `<div class="prob">
+    ${statusSelect(p.n)}
+    <div class="title"><a href="${esc(p.url)}" target="_blank" rel="noopener">${p.n}. ${esc(p.title)}</a>
+      <div class="meta"><span class="d-${p.difficulty}">${p.difficulty}</span> · ${esc(p.pattern)}${showDay ? ` · Day ${p.day}` : ""}${p.source === "Extra" ? " · extra" : ""}${doneTxt}${dueTxt}</div></div>
+    <label class="mins">min <input type="number" min="0" step="5" data-pm="${p.n}" value="${esc(r.m ?? "")}" aria-label="Minutes spent"></label>
+    <div class="note"><input type="text" data-pn="${p.n}" value="${esc(r.note ?? "")}" placeholder="Notes / why I missed it"></div>
+  </div>`;
+}
+function segButtons(id) {
+  const s = get(id).s || "todo";
+  return `<span class="seg" data-i="${id}">${[["todo", "To do"], ["done", "Done"], ["review", "Revisit"]].map(([v, l]) => `<button data-v="${v}" class="${v === s ? "on" : ""}">${l}</button>`).join("")}</span>`;
+}
+function designRow(it) {
+  const match = DATA.designs.find(d => d.planDay === String(it.day) && it.text.toLowerCase().includes(d.name.split(" (")[0].toLowerCase().split(" ")[0]));
+  const note = get(it.id).note ?? "";
+  return `<div class="item">${segButtons(it.id)}<div class="body"><div>${mdLinks(it.text)}</div>
+    ${match ? `<div class="insight"><b>Lead with:</b> ${esc(match.insight)}<br><b>Deep dives:</b> ${esc(match.deepDives)} <span class="muted">(${esc(match.book)})</span></div>` : ""}
+    <input type="text" data-in="${it.id}" value="${esc(note)}" placeholder="What I missed vs the book" style="width:100%;margin-top:6px"></div></div>`;
+}
+function checkRow(id, text) {
+  const on = get(id).s === "done";
+  return `<label class="check ${on ? "done" : ""}"><input type="checkbox" data-c="${id}"${on ? " checked" : ""}><span>${mdLinks(text)}</span></label>`;
+}
+
+function renderSummary() {
+  const today = todayISO(), cur = currentDay(), started = today >= DATA.start;
+  const total = DATA.problems.length;
+  const solved = DATA.problems.filter(p => SOLVED.has(probStatus(p.n))).length;
+  const attempted = DATA.problems.filter(p => probStatus(p.n) !== "todo").length;
+  const allDesign = DATA.days.flatMap(d => designItems(d.day));
+  const dDone = allDesign.filter(it => get(it.id).s === "done").length;
+  const planned = DATA.days.reduce((a, d) => a + d.hours, 0);
+  const logged = DATA.days.reduce((a, d) => a + (Number(get("h" + d.day).v) || 0), 0);
+  const due = DATA.problems.filter(p => { const d = redoDue(p.n); return d && d <= today; }).length;
+  const queue = DATA.problems.filter(p => probStatus(p.n) === "help").length;
+  const dayLabel = !started ? `<small>starts in ${daysBetween(today, DATA.start)}d</small>` : today > DATA.days.at(-1).date ? "Done" : `${cur} <small>/ ${DATA.days.length}</small>`;
+  $("#summary").innerHTML = `
+    <div class="card stat"><div class="k">Plan day</div><div class="v">${dayLabel}</div>${bar(started ? cur : 0, DATA.days.length)}</div>
+    <div class="card stat"><div class="k">DSA solved</div><div class="v">${solved} <small>/ ${total} · ${attempted} tried</small></div>${bar(solved, total)}</div>
+    <div class="card stat"><div class="k">Designs &amp; LLD done</div><div class="v">${dDone} <small>/ ${allDesign.length}</small></div>${bar(dDone, allDesign.length)}</div>
+    <div class="card stat"><div class="k">Hours logged</div><div class="v">${+logged.toFixed(1)} <small>/ ${planned}</small></div>${bar(logged, planned)}</div>
+    <div class="card stat"><div class="k">Redo queue</div><div class="v">${queue} <small>${due ? `· <span class="due">${due} due</span>` : "· none due"}</small></div></div>`;
+}
+
+function renderBanner() {
+  $("#banner").innerHTML = token() ? "" :
+    `<div class="banner">Progress is saved in this browser only. Connect GitHub to keep it in your repo and sync across devices.<button id="bannerConnect">Connect GitHub</button></div>`;
+}
+
+function viewToday() {
+  const day = Math.min(Math.max(ui.day || currentDay(), 1), DATA.days.length);
+  const d = DATA.days[day - 1], st = dayStats(day), today = todayISO();
+  const probs = DATA.problems.filter(p => p.day === day);
+  const redo = DATA.problems.filter(p => probStatus(p.n) === "help").sort((a, b) => redoDue(a.n).localeCompare(redoDue(b.n)));
+  return `
+  <div class="dayhead">
+    <button data-day="${day - 1}" ${day === 1 ? "disabled" : ""} aria-label="Previous day">←</button>
+    <div class="grow"><h2>Day ${day} · ${esc(d.label)} ${d.date === today ? '<span class="tag">Today</span>' : ""} ${d.weekend ? '<span class="tag">Weekend</span>' : ""}</h2>
+      <div class="muted small">Week ${d.week} · planned ${d.hours} h · ${st.pDone}/${st.probs} problems · ${st.iDone}/${st.items} design &amp; other</div></div>
+    ${day !== currentDay() ? `<button data-day="${currentDay()}">Jump to today</button>` : ""}
+    <button data-day="${day + 1}" ${day === DATA.days.length ? "disabled" : ""} aria-label="Next day">→</button>
+  </div>
+  <div class="grid2">
+    <div class="stack">
+      <div class="card"><h3>DSA · ${esc(d.dsaTopic)}</h3>
+        ${probs.length ? probs.map(p => probRow(p, false)).join("") : `<div class="empty">No new problems today — work through the redo queue.</div>`}</div>
+      <div class="card"><h3>System design / LLD</h3>
+        ${d.design.length ? designItems(day).map(designRow).join("") : `<div class="empty">No new design today.</div>`}
+        ${d.read ? `<p class="small muted" style="margin:10px 0 0"><b>Read:</b> ${esc(d.read)}</p>` : ""}</div>
+    </div>
+    <div class="stack">
+      <div class="card"><h3>Hours today</h3>
+        <label class="small">Actual <input type="number" min="0" step="0.5" data-h="${day}" value="${esc(get("h" + day).v ?? "")}"> of ${d.hours} h planned</label></div>
+      ${d.other.length ? `<div class="card"><h3>Other</h3>${otherItems(day).map(it => checkRow(it.id, it.text)).join("")}</div>` : ""}
+      <div class="card"><h3>Redo queue</h3>
+        ${redo.length ? redo.map(p => { const due = redoDue(p.n); return `<div class="item"><div class="body"><a href="${esc(p.url)}" target="_blank" rel="noopener">${p.n}. ${esc(p.title)}</a>
+          <div class="meta small ${due <= today ? "due" : "muted"}">${due <= today ? "Due" : "Redo on"} ${fmtDate(due)}${get("p" + p.n).note ? ` · ${esc(get("p" + p.n).note)}` : ""}</div></div>
+          <button data-redone="${p.n}">Redone ✓</button></div>`; }).join("") : `<div class="empty">Empty. Mark a problem “Needed help” and it comes back here ${REDO_GAP_DAYS} days later.</div>`}</div>
+    </div>
+  </div>`;
+}
+
+function viewDsa() {
+  const f = ui.f || {};
+  const patterns = [...new Set(DATA.problems.map(p => p.pattern))].sort();
+  const opt = (v, l, cur) => `<option value="${esc(v)}"${String(cur ?? "") === String(v) ? " selected" : ""}>${esc(l)}</option>`;
+  const list = DATA.problems.filter(p =>
+    (!f.week || DATA.days[p.day - 1].week === +f.week) &&
+    (!f.status || probStatus(p.n) === f.status) &&
+    (!f.diff || p.difficulty === f.diff) &&
+    (!f.pattern || p.pattern === f.pattern) &&
+    (!f.q || (p.title + " " + (get("p" + p.n).note || "")).toLowerCase().includes(f.q.toLowerCase())));
+  let html = "", lastDay = 0;
+  for (const p of list) {
+    if (p.day !== lastDay) { html += `<div class="daygroup">Day ${p.day} · ${esc(DATA.days[p.day - 1].label)} · ${esc(DATA.days[p.day - 1].dsaTopic)}</div>`; lastDay = p.day; }
+    html += probRow(p, false);
+  }
+  const byPattern = patterns.map(pt => { const ps = DATA.problems.filter(p => p.pattern === pt); return [pt, ps.filter(p => SOLVED.has(probStatus(p.n))).length, ps.length]; });
+  const byDiff = ["Easy", "Medium", "Hard"].map(df => { const ps = DATA.problems.filter(p => p.difficulty === df); return [df, ps.filter(p => SOLVED.has(probStatus(p.n))).length, ps.length]; });
+  const row = ([k, a, b], cls = "") => `<div class="row"><span class="${cls}">${esc(k)}</span><span class="num muted">${a}/${b}</span>${bar(a, b)}</div>`;
+  return `
+  <div class="card" style="margin-bottom:16px"><h3>Solved by difficulty and pattern</h3>
+    <div class="patterns" style="margin-bottom:14px">${byDiff.map(r => row(r, "d-" + r[0])).join("")}</div>
+    <div class="patterns">${byPattern.map(r => row(r)).join("")}</div></div>
+  <div class="card">
+    <div class="filters">
+      <input type="text" data-f="q" value="${esc(f.q || "")}" placeholder="Search problems or notes">
+      <select data-f="week">${opt("", "All weeks", f.week)}${[1, 2, 3].map(w => opt(w, "Week " + w, f.week)).join("")}</select>
+      <select data-f="status">${opt("", "Any status", f.status)}${STATUS.map(([v, l]) => opt(v, l, f.status)).join("")}</select>
+      <select data-f="diff">${opt("", "Any difficulty", f.diff)}${["Easy", "Medium", "Hard"].map(v => opt(v, v, f.diff)).join("")}</select>
+      <select data-f="pattern">${opt("", "Any pattern", f.pattern)}${patterns.map(v => opt(v, v, f.pattern)).join("")}</select>
+    </div>
+    <div class="small muted">${list.length} of ${DATA.problems.length} problems</div>
+    ${html || `<div class="empty">No problems match these filters.</div>`}
+  </div>`;
+}
+
+function viewDesign() {
+  const days = DATA.days.filter(d => d.design.length || d.other.length);
+  const stretch = DATA.designs.filter(d => d.planDay === "Stretch");
+  return `
+  <div class="grid2">
+    <div class="card">${days.map(d => `
+      <div class="daygroup">Day ${d.day} · ${esc(d.label)}${d.read ? ` · <span style="font-weight:400">Read: ${esc(d.read)}</span>` : ""}</div>
+      ${designItems(d.day).map(designRow).join("")}
+      ${otherItems(d.day).map(it => checkRow(it.id, it.text)).join("")}`).join("")}
+    </div>
+    <div class="stack">
+      <div class="card"><h3>Final-day checklist</h3>${DATA.checklist.map((t, i) => checkRow("c" + i, t)).join("")}</div>
+      <div class="card"><h3>Stretch designs</h3>${stretch.map(d => { const id = "x" + d.name.toLowerCase().replace(/[^a-z]+/g, "-"); return `<div class="item">${segButtons(id)}<div class="body"><div>${esc(d.name)}</div><div class="insight"><b>Lead with:</b> ${esc(d.insight)} <span class="muted">(${esc(d.book)})</span></div></div></div>`; }).join("")}</div>
+    </div>
+  </div>`;
+}
+
+function viewPlan() {
+  const cur = currentDay(), today = todayISO();
+  let rows = "", week = 0, wk = null;
+  const flush = () => wk && (rows += `<tr class="week"><td colspan="2">Week ${week} total</td><td class="hide-sm"></td><td class="num">${wk.pDone}/${wk.probs}</td><td class="num">${wk.iDone}/${wk.items}</td><td class="num">${+wk.hours.toFixed(1)} / ${wk.planned}</td></tr>`);
+  for (const d of DATA.days) {
+    if (d.week !== week) { flush(); week = d.week; wk = { probs: 0, pDone: 0, items: 0, iDone: 0, hours: 0, planned: 0 }; }
+    const s = dayStats(d.day);
+    for (const k of ["probs", "pDone", "items", "iDone", "hours"]) wk[k] += s[k];
+    wk.planned += d.hours;
+    rows += `<tr class="${d.date === today ? "today" : ""}">
+      <td><a href="#today" data-day="${d.day}">Day ${d.day}</a></td><td style="white-space:nowrap">${esc(d.label)}</td>
+      <td class="hide-sm">${esc(d.dsaTopic)}${d.design.length ? `<div class="small muted">${d.design.map(esc).join(" · ")}</div>` : ""}</td>
+      <td class="num">${s.probs ? `${s.pDone}/${s.probs}<span class="mini">${bar(s.pDone, s.probs)}</span>` : "–"}</td>
+      <td class="num">${s.items ? `${s.iDone}/${s.items}<span class="mini">${bar(s.iDone, s.items)}</span>` : "–"}</td>
+      <td class="num"><input type="number" min="0" step="0.5" data-h="${d.day}" value="${esc(get("h" + d.day).v ?? "")}" aria-label="Actual hours day ${d.day}"> / ${d.hours}</td></tr>`;
+  }
+  flush();
+  return `<div class="card scroll"><table>
+    <thead><tr><th>Day</th><th>Date</th><th class="hide-sm">Focus</th><th class="num">DSA tried</th><th class="num">Design &amp; other</th><th class="num">Hours</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+
+const VIEWS = { today: viewToday, dsa: viewDsa, design: viewDesign, plan: viewPlan };
+function tab() { const t = location.hash.slice(1); return VIEWS[t] ? t : "today"; }
+function render() {
+  if (!DATA) return;
+  const active = document.activeElement, key = active && (active.dataset.f || active.dataset.pn || active.dataset.in);
+  renderBanner(); renderSummary();
+  document.querySelectorAll("#tabs a").forEach(a => a.classList.toggle("on", a.dataset.t === tab()));
+  $("#view").innerHTML = VIEWS[tab()]();
+  if (key && active.dataset.f === "q") { const el = $(`[data-f="q"]`); el.focus(); el.setSelectionRange(el.value.length, el.value.length); }
+}
+
+// ---------- events ----------
+document.addEventListener("change", e => {
+  const el = e.target, ds = el.dataset;
+  if (ds.p) {
+    set("p" + ds.p, { s: el.value, d: el.value === "todo" ? null : todayISO() });
+    render();
+  } else if (ds.pm) { set("p" + ds.pm, { m: el.value === "" ? null : +el.value }); }
+  else if (ds.pn !== undefined) { set("p" + ds.pn, { note: el.value }); }
+  else if (ds.in) { set(ds.in, { note: el.value }); }
+  else if (ds.c) { set(ds.c, { s: el.checked ? "done" : "todo" }); render(); }
+  else if (ds.h) { set("h" + ds.h, { v: el.value === "" ? null : +el.value }); renderSummary(); }
+  else if (ds.f && ds.f !== "q") { ui.f = { ...ui.f, [ds.f]: el.value }; writeLS(LS_UI, ui); render(); }
+});
+document.addEventListener("input", e => {
+  if (e.target.dataset.f === "q") { ui.f = { ...ui.f, q: e.target.value }; writeLS(LS_UI, ui); render(); }
+});
+document.addEventListener("click", e => {
+  const seg = e.target.closest(".seg button");
+  if (seg) { set(seg.parentElement.dataset.i, { s: seg.dataset.v }); render(); return; }
+  const dayBtn = e.target.closest("[data-day]");
+  if (dayBtn) { e.preventDefault(); ui.day = +dayBtn.dataset.day; writeLS(LS_UI, ui); location.hash === "#today" ? render() : (location.hash = "today"); scrollTo(0, 0); return; }
+  const redone = e.target.closest("[data-redone]");
+  if (redone) { set("p" + redone.dataset.redone, { s: "redone", d: todayISO() }); render(); return; }
+  if (e.target.closest("#sync, #bannerConnect")) openDialog();
+});
+window.addEventListener("hashchange", render);
+window.addEventListener("focus", () => { if (Date.now() - sync.lastPull > 30000) sync.pull(); });
+window.addEventListener("beforeunload", e => { if (token() && (sync.dirty || sync.busy)) { e.preventDefault(); e.returnValue = ""; } });
+
+// ---------- dialog / import / export ----------
+const dlg = $("#syncDialog");
+function openDialog() {
+  $("#repoLink").textContent = `${CONFIG.owner}/${CONFIG.repo}`;
+  $("#repoLink").href = `https://github.com/${CONFIG.owner}/${CONFIG.repo}/blob/${CONFIG.branch}/${CONFIG.path}`;
+  $("#tokenInput").value = token();
+  $("#syncMsg").textContent = token() ? "Connected. Edits save to GitHub a second or two after you make them." : "";
+  dlg.showModal();
+}
+$("#closeDialog").onclick = () => dlg.close();
+$("#connect").onclick = async () => {
+  const t = $("#tokenInput").value.trim();
+  if (!t) { $("#syncMsg").textContent = "Paste a token first."; return; }
+  try { localStorage.setItem(LS_TOKEN, t); } catch { $("#syncMsg").textContent = "This browser blocks storage, so the token can't be saved."; return; }
+  $("#syncMsg").textContent = "Syncing…";
+  await sync.pull();
+  if ($("#sync").dataset.s === "error") { $("#syncMsg").textContent ||= "Couldn't sync — check the token's repository and Contents permission."; return; }
+  render(); dlg.close();
+};
+$("#disconnect").onclick = () => { try { localStorage.removeItem(LS_TOKEN); } catch {} sync.idle(); render(); dlg.close(); };
+
+function download(name, text, type) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+$("#exportJson").onclick = () => download(`interview-progress-${todayISO()}.json`, JSON.stringify(state, null, 1), "application/json");
+$("#exportCsv").onclick = () => {
+  const q = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const lines = [["#", "Problem", "Difficulty", "Pattern", "Day", "Status", "Date", "Minutes", "Redo due", "Notes", "Link"].join(",")];
+  for (const p of DATA.problems) { const r = get("p" + p.n); lines.push([p.n, q(p.title), p.difficulty, q(p.pattern), p.day, probStatus(p.n), r.d || "", r.m ?? "", redoDue(p.n) || "", q(r.note), p.url].join(",")); }
+  download(`dsa-progress-${todayISO()}.csv`, lines.join("\n"), "text/csv");
+};
+$("#importJson").onclick = () => $("#importFile").click();
+$("#importFile").onchange = async e => {
+  const file = e.target.files[0]; if (!file) return;
+  try {
+    const incoming = JSON.parse(await file.text());
+    if (!incoming.items) throw new Error("not a progress file");
+    state = merge(state, incoming); writeLS(LS_STATE, state); sync.schedule(); render();
+  } catch (err) { alert("Couldn't import: " + err.message); }
+  e.target.value = "";
+};
+
+// ---------- boot ----------
+(async function boot() {
+  state = readLS(LS_STATE, null) || { v: 1, items: {}, updatedAt: 0 };
+  ui = readLS(LS_UI, {});
+  ui.day = null; // always open on today's plan day
+  sync.idle();
+  try {
+    DATA = await (await fetch("data.json", { cache: "no-cache" })).json();
+  } catch {
+    $("#view").innerHTML = `<p>Couldn't load <code>data.json</code>.</p>`; return;
+  }
+  render();
+  sync.pull();
+})();
+</script>
+</body>
+</html>

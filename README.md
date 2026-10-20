@@ -2,13 +2,13 @@
 
 A focused 3-week plan to switch jobs as an SDE2 with 5.5 years of experience, covering **DSA** and **system design** (HLD + LLD). Runs **Wed 21 Oct → Tue 10 Nov 2026**.
 
-**Pages:** [DSA problem list](dsa/) · [System design crash course](system-design/)
+**Pages:** [Progress tracker](tracker/) · [DSA problem list](dsa/) · [System design crash course](system-design/)
 
 | | |
 | --- | --- |
 | **DSA** | 105 problems — all of [Grind 75](https://www.techinterviewhandbook.org/grind75/) + 30 extras, grouped by pattern → [`dsa/PROBLEMS.md`](dsa/PROBLEMS.md) |
 | **System design** | Crash course mapped to Alex Xu Vol 1 & 2 → [`system-design/CRASH_COURSE.md`](system-design/CRASH_COURSE.md) |
-| **Tracker** | Sortable Excel with plan, problem status, auto redo dates and a dashboard → [`tracker/interview_prep_tracker.xlsx`](tracker/interview_prep_tracker.xlsx) |
+| **Tracker** | Interactive web tracker (status, time, notes, redo queue, hours, synced to GitHub) → [tracker](tracker/); the original Excel is still in [`tracker/interview_prep_tracker.xlsx`](tracker/interview_prep_tracker.xlsx) |
 | **Time budget** | ~3.5 h on weekdays, ~7 h on weekends (~94 h total), roughly 50/50 DSA vs design |
 
 ## Repo structure
@@ -78,7 +78,7 @@ Mixed timed DSA, the remaining HLD problems, LLD in 60–90 minute sittings, thr
 1. **DSA first** while you're fresh. Time-box each problem to 25–30 minutes; if stuck, read the approach and re-solve it yourself 2 days later (the tracker sets the redo date automatically).
 2. **Log every miss** with the pattern and *why* you missed it. The mistake log is worth more than the problem count.
 3. **Design out loud** with a 45-minute timer using the 7-step framework, then compare against the book chapter and note what you missed.
-4. **Update the tracker** — status, actual hours, notes — before you stop for the day.
+4. **Update the [tracker](tracker/)** — status, actual hours, notes — before you stop for the day.
 
 ## Habits that make the difference
 
@@ -106,7 +106,7 @@ Mixed timed DSA, the remaining HLD problems, LLD in 60–90 minute sittings, thr
 
 ## Using this repo
 
-**Tracker:** GitHub can't preview `.xlsx` files. Download it, track progress in Excel or Google Sheets, and commit it back. The markdown files are the read-only views that render on GitHub.
+**Tracker:** open the [tracker page](tracker/) on the live site. Progress saves in your browser as you click. To keep it in this repo and sync across devices, click **Local only → Connect GitHub** and paste a fine-grained token with *Contents: read and write* on this repo only; progress is then saved to `progress.json` on the `progress` branch (separate from `main`, so saves don't rebuild the site). Problems and days come from `tracker/data.json`; after editing the plan or problem list, run `python3 scripts/build_tracker_data.py` and commit.
 
 **Serve it as a site with GitHub Pages:**
 

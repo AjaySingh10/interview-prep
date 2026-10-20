@@ -1,0 +1,1387 @@
+{
+ "start": "2026-10-21",
+ "days": [
+  {
+   "day": 1,
+   "week": 1,
+   "label": "Wed 21 Oct",
+   "date": "2026-10-21",
+   "weekend": false,
+   "dsaTopic": "Arrays & hashing, two pointers",
+   "design": [
+    "Scaling & load balancers"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 3, ch. 1 (first half); this guide §2–3"
+  },
+  {
+   "day": 2,
+   "week": 1,
+   "label": "Thu 22 Oct",
+   "date": "2026-10-22",
+   "weekend": false,
+   "dsaTopic": "Sliding window",
+   "design": [
+    "Caching"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 1 (cache, CDN); §3"
+  },
+  {
+   "day": 3,
+   "week": 1,
+   "label": "Fri 23 Oct",
+   "date": "2026-10-23",
+   "weekend": false,
+   "dsaTopic": "Binary search (incl. on the answer)",
+   "design": [
+    "SQL vs NoSQL, indexing"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 1 (database); DDIA ch. 3 (optional)"
+  },
+  {
+   "day": 4,
+   "week": 1,
+   "label": "Sat 24 Oct",
+   "date": "2026-10-24",
+   "weekend": true,
+   "dsaTopic": "Stacks, monotonic stacks & heaps",
+   "design": [
+    "Replication, sharding, consistent hashing",
+    "CAP, consistency models, queues/Kafka"
+   ],
+   "other": [],
+   "hours": 7.0,
+   "read": "Vol 1 ch. 5–6; Vol 2 ch. 4 (skim)"
+  },
+  {
+   "day": 5,
+   "week": 1,
+   "label": "Sun 25 Oct",
+   "date": "2026-10-25",
+   "weekend": true,
+   "dsaTopic": "Linked lists & trees",
+   "design": [
+    "CDN, rate limiting, estimation",
+    "Design: URL shortener"
+   ],
+   "other": [],
+   "hours": 7.0,
+   "read": "Vol 1 ch. 2, 7, 8"
+  },
+  {
+   "day": 6,
+   "week": 1,
+   "label": "Mon 26 Oct",
+   "date": "2026-10-26",
+   "weekend": false,
+   "dsaTopic": "Timed mock: mixed set",
+   "design": [
+    "Design: Rate limiter"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 4"
+  },
+  {
+   "day": 7,
+   "week": 1,
+   "label": "Tue 27 Oct",
+   "date": "2026-10-27",
+   "weekend": false,
+   "dsaTopic": "Review misses + leftover easies",
+   "design": [
+    "LLD: SOLID + design patterns"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "§6"
+  },
+  {
+   "day": 8,
+   "week": 2,
+   "label": "Wed 28 Oct",
+   "date": "2026-10-28",
+   "weekend": false,
+   "dsaTopic": "Graphs: BFS/DFS, topological sort",
+   "design": [
+    "Design: News feed"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 11; §4 fan-out"
+  },
+  {
+   "day": 9,
+   "week": 2,
+   "label": "Thu 29 Oct",
+   "date": "2026-10-29",
+   "weekend": false,
+   "dsaTopic": "Graphs: union-find, Dijkstra",
+   "design": [
+    "Design: Chat app (WhatsApp)"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 12"
+  },
+  {
+   "day": 10,
+   "week": 2,
+   "label": "Fri 30 Oct",
+   "date": "2026-10-30",
+   "weekend": false,
+   "dsaTopic": "DP: 1D & 2D grid",
+   "design": [
+    "Design: Notification system"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 10; §4 reliability patterns"
+  },
+  {
+   "day": 11,
+   "week": 2,
+   "label": "Sat 31 Oct",
+   "date": "2026-10-31",
+   "weekend": true,
+   "dsaTopic": "DP: knapsack, LIS, strings",
+   "design": [
+    "Design: Ride hailing (Uber)",
+    "LLD: Parking lot"
+   ],
+   "other": [],
+   "hours": 7.0,
+   "read": "Vol 2 ch. 1–3"
+  },
+  {
+   "day": 12,
+   "week": 2,
+   "label": "Sun 01 Nov",
+   "date": "2026-11-01",
+   "weekend": true,
+   "dsaTopic": "Backtracking, tries, intervals, greedy",
+   "design": [
+    "Design: Video streaming (YouTube)",
+    "LLD: LRU cache (LLD version)"
+   ],
+   "other": [],
+   "hours": 7.0,
+   "read": "Vol 1 ch. 14"
+  },
+  {
+   "day": 13,
+   "week": 2,
+   "label": "Mon 02 Nov",
+   "date": "2026-11-02",
+   "weekend": false,
+   "dsaTopic": "Timed mock: mixed set",
+   "design": [
+    "Design: Search autocomplete"
+   ],
+   "other": [],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 13"
+  },
+  {
+   "day": 14,
+   "week": 2,
+   "label": "Tue 03 Nov",
+   "date": "2026-11-03",
+   "weekend": false,
+   "dsaTopic": "Mixed practice",
+   "design": [
+    "Design: Distributed cache"
+   ],
+   "other": [
+    "Project deep-dive #1"
+   ],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 5–6 (re-read deep dives)"
+  },
+  {
+   "day": 15,
+   "week": 3,
+   "label": "Wed 04 Nov",
+   "date": "2026-11-04",
+   "weekend": false,
+   "dsaTopic": "Mixed practice",
+   "design": [
+    "Design: Ticket booking (BookMyShow)"
+   ],
+   "other": [
+    "Project deep-dive #2"
+   ],
+   "hours": 3.5,
+   "read": "Vol 2 ch. 7; §4 saga"
+  },
+  {
+   "day": 16,
+   "week": 3,
+   "label": "Thu 05 Nov",
+   "date": "2026-11-05",
+   "weekend": false,
+   "dsaTopic": "Mixed practice",
+   "design": [
+    "Design: Payment system"
+   ],
+   "other": [
+    "Mock interview #1"
+   ],
+   "hours": 3.5,
+   "read": "Vol 2 ch. 11; §4 idempotency, outbox"
+  },
+  {
+   "day": 17,
+   "week": 3,
+   "label": "Fri 06 Nov",
+   "date": "2026-11-06",
+   "weekend": false,
+   "dsaTopic": "Mixed practice",
+   "design": [
+    "Design: Key-value store"
+   ],
+   "other": [
+    "STAR stories"
+   ],
+   "hours": 3.5,
+   "read": "Vol 1 ch. 6"
+  },
+  {
+   "day": 18,
+   "week": 3,
+   "label": "Sat 07 Nov",
+   "date": "2026-11-07",
+   "weekend": true,
+   "dsaTopic": "Mixed timed practice",
+   "design": [
+    "LLD: Splitwise",
+    "LLD: Elevator system"
+   ],
+   "other": [
+    "Mock interview #2"
+   ],
+   "hours": 7.0,
+   "read": "§6"
+  },
+  {
+   "day": 19,
+   "week": 3,
+   "label": "Sun 08 Nov",
+   "date": "2026-11-08",
+   "weekend": true,
+   "dsaTopic": "Mixed timed practice",
+   "design": [
+    "LLD: Booking system"
+   ],
+   "other": [
+    "Mock interview #3",
+    "Review all HLD notes"
+   ],
+   "hours": 7.0,
+   "read": "§6"
+  },
+  {
+   "day": 20,
+   "week": 3,
+   "label": "Mon 09 Nov",
+   "date": "2026-11-09",
+   "weekend": false,
+   "dsaTopic": "Redo failed problems (no solutions)",
+   "design": [],
+   "other": [
+    "Final mistake-log review"
+   ],
+   "hours": 3.5,
+   "read": "This guide end to end"
+  },
+  {
+   "day": 21,
+   "week": 3,
+   "label": "Tue 10 Nov",
+   "date": "2026-11-10",
+   "weekend": false,
+   "dsaTopic": "Light redo + rest",
+   "design": [],
+   "other": [
+    "Skim HLD framework + STAR stories"
+   ],
+   "hours": 2.5,
+   "read": "This guide end to end"
+  }
+ ],
+ "problems": [
+  {
+   "n": 1,
+   "title": "Two Sum",
+   "url": "https://leetcode.com/problems/two-sum/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 2,
+   "title": "Valid Anagram",
+   "url": "https://leetcode.com/problems/valid-anagram/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 3,
+   "title": "Contains Duplicate",
+   "url": "https://leetcode.com/problems/contains-duplicate/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 4,
+   "title": "Valid Palindrome",
+   "url": "https://leetcode.com/problems/valid-palindrome/",
+   "difficulty": "Easy",
+   "pattern": "Two pointers",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 5,
+   "title": "Product of Array Except Self",
+   "url": "https://leetcode.com/problems/product-of-array-except-self/",
+   "difficulty": "Medium",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 6,
+   "title": "3Sum",
+   "url": "https://leetcode.com/problems/3sum/",
+   "difficulty": "Medium",
+   "pattern": "Two pointers",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 7,
+   "title": "Container With Most Water",
+   "url": "https://leetcode.com/problems/container-with-most-water/",
+   "difficulty": "Medium",
+   "pattern": "Two pointers",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 8,
+   "title": "Sort Colors",
+   "url": "https://leetcode.com/problems/sort-colors/",
+   "difficulty": "Medium",
+   "pattern": "Two pointers",
+   "source": "Grind 75",
+   "day": 1
+  },
+  {
+   "n": 9,
+   "title": "Best Time to Buy and Sell Stock",
+   "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+   "difficulty": "Easy",
+   "pattern": "Sliding window",
+   "source": "Grind 75",
+   "day": 2
+  },
+  {
+   "n": 10,
+   "title": "Maximum Subarray",
+   "url": "https://leetcode.com/problems/maximum-subarray/",
+   "difficulty": "Medium",
+   "pattern": "Sliding window",
+   "source": "Grind 75",
+   "day": 2
+  },
+  {
+   "n": 11,
+   "title": "Longest Substring Without Repeating Characters",
+   "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+   "difficulty": "Medium",
+   "pattern": "Sliding window",
+   "source": "Grind 75",
+   "day": 2
+  },
+  {
+   "n": 12,
+   "title": "Find All Anagrams in a String",
+   "url": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
+   "difficulty": "Medium",
+   "pattern": "Sliding window",
+   "source": "Grind 75",
+   "day": 2
+  },
+  {
+   "n": 13,
+   "title": "Minimum Window Substring",
+   "url": "https://leetcode.com/problems/minimum-window-substring/",
+   "difficulty": "Hard",
+   "pattern": "Sliding window",
+   "source": "Grind 75",
+   "day": 2
+  },
+  {
+   "n": 14,
+   "title": "Binary Search",
+   "url": "https://leetcode.com/problems/binary-search/",
+   "difficulty": "Easy",
+   "pattern": "Binary search",
+   "source": "Grind 75",
+   "day": 3
+  },
+  {
+   "n": 15,
+   "title": "First Bad Version",
+   "url": "https://leetcode.com/problems/first-bad-version/",
+   "difficulty": "Easy",
+   "pattern": "Binary search",
+   "source": "Grind 75",
+   "day": 3
+  },
+  {
+   "n": 16,
+   "title": "Search in Rotated Sorted Array",
+   "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+   "difficulty": "Medium",
+   "pattern": "Binary search",
+   "source": "Grind 75",
+   "day": 3
+  },
+  {
+   "n": 17,
+   "title": "Time Based Key-Value Store",
+   "url": "https://leetcode.com/problems/time-based-key-value-store/",
+   "difficulty": "Medium",
+   "pattern": "Binary search",
+   "source": "Grind 75",
+   "day": 3
+  },
+  {
+   "n": 18,
+   "title": "Koko Eating Bananas",
+   "url": "https://leetcode.com/problems/koko-eating-bananas/",
+   "difficulty": "Medium",
+   "pattern": "Binary search",
+   "source": "Extra",
+   "day": 3
+  },
+  {
+   "n": 19,
+   "title": "Valid Parentheses",
+   "url": "https://leetcode.com/problems/valid-parentheses/",
+   "difficulty": "Easy",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 20,
+   "title": "Implement Queue using Stacks",
+   "url": "https://leetcode.com/problems/implement-queue-using-stacks/",
+   "difficulty": "Easy",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 21,
+   "title": "Min Stack",
+   "url": "https://leetcode.com/problems/min-stack/",
+   "difficulty": "Medium",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 22,
+   "title": "Evaluate Reverse Polish Notation",
+   "url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+   "difficulty": "Medium",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 23,
+   "title": "Daily Temperatures",
+   "url": "https://leetcode.com/problems/daily-temperatures/",
+   "difficulty": "Medium",
+   "pattern": "Stack",
+   "source": "Extra",
+   "day": 4
+  },
+  {
+   "n": 24,
+   "title": "Largest Rectangle in Histogram",
+   "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+   "difficulty": "Hard",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 25,
+   "title": "K Closest Points to Origin",
+   "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+   "difficulty": "Medium",
+   "pattern": "Heap",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 26,
+   "title": "Top K Frequent Elements",
+   "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+   "difficulty": "Medium",
+   "pattern": "Heap",
+   "source": "Extra",
+   "day": 4
+  },
+  {
+   "n": 27,
+   "title": "Task Scheduler",
+   "url": "https://leetcode.com/problems/task-scheduler/",
+   "difficulty": "Medium",
+   "pattern": "Heap",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 28,
+   "title": "Merge k Sorted Lists",
+   "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+   "difficulty": "Hard",
+   "pattern": "Heap",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 29,
+   "title": "Find Median from Data Stream",
+   "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+   "difficulty": "Hard",
+   "pattern": "Heap",
+   "source": "Grind 75",
+   "day": 4
+  },
+  {
+   "n": 30,
+   "title": "Merge Two Sorted Lists",
+   "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+   "difficulty": "Easy",
+   "pattern": "Linked list",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 31,
+   "title": "Linked List Cycle",
+   "url": "https://leetcode.com/problems/linked-list-cycle/",
+   "difficulty": "Easy",
+   "pattern": "Linked list",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 32,
+   "title": "Reverse Linked List",
+   "url": "https://leetcode.com/problems/reverse-linked-list/",
+   "difficulty": "Easy",
+   "pattern": "Linked list",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 33,
+   "title": "Middle of the Linked List",
+   "url": "https://leetcode.com/problems/middle-of-the-linked-list/",
+   "difficulty": "Easy",
+   "pattern": "Linked list",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 34,
+   "title": "Invert Binary Tree",
+   "url": "https://leetcode.com/problems/invert-binary-tree/",
+   "difficulty": "Easy",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 35,
+   "title": "Maximum Depth of Binary Tree",
+   "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+   "difficulty": "Easy",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 36,
+   "title": "Balanced Binary Tree",
+   "url": "https://leetcode.com/problems/balanced-binary-tree/",
+   "difficulty": "Easy",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 37,
+   "title": "Diameter of Binary Tree",
+   "url": "https://leetcode.com/problems/diameter-of-binary-tree/",
+   "difficulty": "Easy",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 38,
+   "title": "Lowest Common Ancestor of a BST",
+   "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 39,
+   "title": "Binary Tree Level Order Traversal",
+   "url": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 40,
+   "title": "Validate Binary Search Tree",
+   "url": "https://leetcode.com/problems/validate-binary-search-tree/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 41,
+   "title": "Kth Smallest Element in a BST",
+   "url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 42,
+   "title": "Lowest Common Ancestor of a Binary Tree",
+   "url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 43,
+   "title": "Binary Tree Right Side View",
+   "url": "https://leetcode.com/problems/binary-tree-right-side-view/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 5
+  },
+  {
+   "n": 44,
+   "title": "Spiral Matrix",
+   "url": "https://leetcode.com/problems/spiral-matrix/",
+   "difficulty": "Medium",
+   "pattern": "Matrix",
+   "source": "Grind 75",
+   "day": 6
+  },
+  {
+   "n": 45,
+   "title": "String to Integer (atoi)",
+   "url": "https://leetcode.com/problems/string-to-integer-atoi/",
+   "difficulty": "Medium",
+   "pattern": "String",
+   "source": "Grind 75",
+   "day": 6
+  },
+  {
+   "n": 46,
+   "title": "Add Binary",
+   "url": "https://leetcode.com/problems/add-binary/",
+   "difficulty": "Easy",
+   "pattern": "String",
+   "source": "Grind 75",
+   "day": 6
+  },
+  {
+   "n": 47,
+   "title": "LRU Cache",
+   "url": "https://leetcode.com/problems/lru-cache/",
+   "difficulty": "Medium",
+   "pattern": "Design",
+   "source": "Grind 75",
+   "day": 6
+  },
+  {
+   "n": 48,
+   "title": "Ransom Note",
+   "url": "https://leetcode.com/problems/ransom-note/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 7
+  },
+  {
+   "n": 49,
+   "title": "Majority Element",
+   "url": "https://leetcode.com/problems/majority-element/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 7
+  },
+  {
+   "n": 50,
+   "title": "Longest Palindrome",
+   "url": "https://leetcode.com/problems/longest-palindrome/",
+   "difficulty": "Easy",
+   "pattern": "Arrays & hashing",
+   "source": "Grind 75",
+   "day": 7
+  },
+  {
+   "n": 51,
+   "title": "Flood Fill",
+   "url": "https://leetcode.com/problems/flood-fill/",
+   "difficulty": "Easy",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 52,
+   "title": "Number of Islands",
+   "url": "https://leetcode.com/problems/number-of-islands/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 53,
+   "title": "Rotting Oranges",
+   "url": "https://leetcode.com/problems/rotting-oranges/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 54,
+   "title": "01 Matrix",
+   "url": "https://leetcode.com/problems/01-matrix/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 55,
+   "title": "Clone Graph",
+   "url": "https://leetcode.com/problems/clone-graph/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 56,
+   "title": "Course Schedule",
+   "url": "https://leetcode.com/problems/course-schedule/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 8
+  },
+  {
+   "n": 57,
+   "title": "Accounts Merge",
+   "url": "https://leetcode.com/problems/accounts-merge/",
+   "difficulty": "Medium",
+   "pattern": "Union-find",
+   "source": "Grind 75",
+   "day": 9
+  },
+  {
+   "n": 58,
+   "title": "Redundant Connection",
+   "url": "https://leetcode.com/problems/redundant-connection/",
+   "difficulty": "Medium",
+   "pattern": "Union-find",
+   "source": "Extra",
+   "day": 9
+  },
+  {
+   "n": 59,
+   "title": "Network Delay Time",
+   "url": "https://leetcode.com/problems/network-delay-time/",
+   "difficulty": "Medium",
+   "pattern": "Dijkstra",
+   "source": "Extra",
+   "day": 9
+  },
+  {
+   "n": 60,
+   "title": "Minimum Height Trees",
+   "url": "https://leetcode.com/problems/minimum-height-trees/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 9
+  },
+  {
+   "n": 61,
+   "title": "Word Ladder",
+   "url": "https://leetcode.com/problems/word-ladder/",
+   "difficulty": "Hard",
+   "pattern": "Graph",
+   "source": "Grind 75",
+   "day": 9
+  },
+  {
+   "n": 62,
+   "title": "Climbing Stairs",
+   "url": "https://leetcode.com/problems/climbing-stairs/",
+   "difficulty": "Easy",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 10
+  },
+  {
+   "n": 63,
+   "title": "House Robber",
+   "url": "https://leetcode.com/problems/house-robber/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 10
+  },
+  {
+   "n": 64,
+   "title": "Coin Change",
+   "url": "https://leetcode.com/problems/coin-change/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 10
+  },
+  {
+   "n": 65,
+   "title": "Unique Paths",
+   "url": "https://leetcode.com/problems/unique-paths/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 10
+  },
+  {
+   "n": 66,
+   "title": "Partition Equal Subset Sum",
+   "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 11
+  },
+  {
+   "n": 67,
+   "title": "Longest Increasing Subsequence",
+   "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 11
+  },
+  {
+   "n": 68,
+   "title": "Word Break",
+   "url": "https://leetcode.com/problems/word-break/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 11
+  },
+  {
+   "n": 69,
+   "title": "Longest Palindromic Substring",
+   "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 11
+  },
+  {
+   "n": 70,
+   "title": "Longest Common Subsequence",
+   "url": "https://leetcode.com/problems/longest-common-subsequence/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 11
+  },
+  {
+   "n": 71,
+   "title": "Edit Distance",
+   "url": "https://leetcode.com/problems/edit-distance/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 11
+  },
+  {
+   "n": 72,
+   "title": "Maximum Profit in Job Scheduling",
+   "url": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+   "difficulty": "Hard",
+   "pattern": "DP",
+   "source": "Grind 75",
+   "day": 11
+  },
+  {
+   "n": 73,
+   "title": "Subsets",
+   "url": "https://leetcode.com/problems/subsets/",
+   "difficulty": "Medium",
+   "pattern": "Backtracking",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 74,
+   "title": "Permutations",
+   "url": "https://leetcode.com/problems/permutations/",
+   "difficulty": "Medium",
+   "pattern": "Backtracking",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 75,
+   "title": "Combination Sum",
+   "url": "https://leetcode.com/problems/combination-sum/",
+   "difficulty": "Medium",
+   "pattern": "Backtracking",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 76,
+   "title": "Letter Combinations of a Phone Number",
+   "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+   "difficulty": "Medium",
+   "pattern": "Backtracking",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 77,
+   "title": "Word Search",
+   "url": "https://leetcode.com/problems/word-search/",
+   "difficulty": "Medium",
+   "pattern": "Backtracking",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 78,
+   "title": "Implement Trie (Prefix Tree)",
+   "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+   "difficulty": "Medium",
+   "pattern": "Trie",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 79,
+   "title": "Insert Interval",
+   "url": "https://leetcode.com/problems/insert-interval/",
+   "difficulty": "Medium",
+   "pattern": "Intervals",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 80,
+   "title": "Merge Intervals",
+   "url": "https://leetcode.com/problems/merge-intervals/",
+   "difficulty": "Medium",
+   "pattern": "Intervals",
+   "source": "Grind 75",
+   "day": 12
+  },
+  {
+   "n": 81,
+   "title": "Jump Game",
+   "url": "https://leetcode.com/problems/jump-game/",
+   "difficulty": "Medium",
+   "pattern": "Greedy",
+   "source": "Extra",
+   "day": 12
+  },
+  {
+   "n": 82,
+   "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+   "url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 13
+  },
+  {
+   "n": 83,
+   "title": "Kth Largest Element in an Array",
+   "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+   "difficulty": "Medium",
+   "pattern": "Heap",
+   "source": "Extra",
+   "day": 13
+  },
+  {
+   "n": 84,
+   "title": "Trapping Rain Water",
+   "url": "https://leetcode.com/problems/trapping-rain-water/",
+   "difficulty": "Hard",
+   "pattern": "Two pointers",
+   "source": "Grind 75",
+   "day": 13
+  },
+  {
+   "n": 85,
+   "title": "Serialize and Deserialize Binary Tree",
+   "url": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
+   "difficulty": "Hard",
+   "pattern": "Tree",
+   "source": "Grind 75",
+   "day": 13
+  },
+  {
+   "n": 86,
+   "title": "Basic Calculator",
+   "url": "https://leetcode.com/problems/basic-calculator/",
+   "difficulty": "Hard",
+   "pattern": "Stack",
+   "source": "Grind 75",
+   "day": 14
+  },
+  {
+   "n": 87,
+   "title": "Group Anagrams",
+   "url": "https://leetcode.com/problems/group-anagrams/",
+   "difficulty": "Medium",
+   "pattern": "Arrays & hashing",
+   "source": "Extra",
+   "day": 14
+  },
+  {
+   "n": 88,
+   "title": "Longest Consecutive Sequence",
+   "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+   "difficulty": "Medium",
+   "pattern": "Arrays & hashing",
+   "source": "Extra",
+   "day": 14
+  },
+  {
+   "n": 89,
+   "title": "Sliding Window Maximum",
+   "url": "https://leetcode.com/problems/sliding-window-maximum/",
+   "difficulty": "Hard",
+   "pattern": "Sliding window",
+   "source": "Extra",
+   "day": 15
+  },
+  {
+   "n": 90,
+   "title": "Decode Ways",
+   "url": "https://leetcode.com/problems/decode-ways/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 15
+  },
+  {
+   "n": 91,
+   "title": "Pacific Atlantic Water Flow",
+   "url": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Extra",
+   "day": 15
+  },
+  {
+   "n": 92,
+   "title": "Gas Station",
+   "url": "https://leetcode.com/problems/gas-station/",
+   "difficulty": "Medium",
+   "pattern": "Greedy",
+   "source": "Extra",
+   "day": 16
+  },
+  {
+   "n": 93,
+   "title": "Maximal Square",
+   "url": "https://leetcode.com/problems/maximal-square/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 16
+  },
+  {
+   "n": 94,
+   "title": "Course Schedule II",
+   "url": "https://leetcode.com/problems/course-schedule-ii/",
+   "difficulty": "Medium",
+   "pattern": "Graph",
+   "source": "Extra",
+   "day": 16
+  },
+  {
+   "n": 95,
+   "title": "Find Minimum in Rotated Sorted Array",
+   "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+   "difficulty": "Medium",
+   "pattern": "Binary search",
+   "source": "Extra",
+   "day": 17
+  },
+  {
+   "n": 96,
+   "title": "Non-overlapping Intervals",
+   "url": "https://leetcode.com/problems/non-overlapping-intervals/",
+   "difficulty": "Medium",
+   "pattern": "Intervals",
+   "source": "Extra",
+   "day": 17
+  },
+  {
+   "n": 97,
+   "title": "House Robber II",
+   "url": "https://leetcode.com/problems/house-robber-ii/",
+   "difficulty": "Medium",
+   "pattern": "DP",
+   "source": "Extra",
+   "day": 17
+  },
+  {
+   "n": 98,
+   "title": "Rotate Image",
+   "url": "https://leetcode.com/problems/rotate-image/",
+   "difficulty": "Medium",
+   "pattern": "Matrix",
+   "source": "Extra",
+   "day": 18
+  },
+  {
+   "n": 99,
+   "title": "Set Matrix Zeroes",
+   "url": "https://leetcode.com/problems/set-matrix-zeroes/",
+   "difficulty": "Medium",
+   "pattern": "Matrix",
+   "source": "Extra",
+   "day": 18
+  },
+  {
+   "n": 100,
+   "title": "Remove Nth Node From End of List",
+   "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+   "difficulty": "Medium",
+   "pattern": "Linked list",
+   "source": "Extra",
+   "day": 18
+  },
+  {
+   "n": 101,
+   "title": "Word Search II",
+   "url": "https://leetcode.com/problems/word-search-ii/",
+   "difficulty": "Hard",
+   "pattern": "Trie",
+   "source": "Extra",
+   "day": 18
+  },
+  {
+   "n": 102,
+   "title": "Reorder List",
+   "url": "https://leetcode.com/problems/reorder-list/",
+   "difficulty": "Medium",
+   "pattern": "Linked list",
+   "source": "Extra",
+   "day": 19
+  },
+  {
+   "n": 103,
+   "title": "Copy List with Random Pointer",
+   "url": "https://leetcode.com/problems/copy-list-with-random-pointer/",
+   "difficulty": "Medium",
+   "pattern": "Linked list",
+   "source": "Extra",
+   "day": 19
+  },
+  {
+   "n": 104,
+   "title": "Path Sum III",
+   "url": "https://leetcode.com/problems/path-sum-iii/",
+   "difficulty": "Medium",
+   "pattern": "Tree",
+   "source": "Extra",
+   "day": 19
+  },
+  {
+   "n": 105,
+   "title": "Binary Tree Maximum Path Sum",
+   "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+   "difficulty": "Hard",
+   "pattern": "Tree",
+   "source": "Extra",
+   "day": 19
+  }
+ ],
+ "designs": [
+  {
+   "name": "URL shortener",
+   "insight": "Read-heavy (~100:1); short code via base62 of a unique ID beats hashing plus collision checks",
+   "deepDives": "301 vs 302 redirects, cache hot links, ID generation, analytics via async events",
+   "planDay": "5",
+   "book": "Vol 1 ch. 8"
+  },
+  {
+   "name": "Rate limiter",
+   "insight": "Token bucket in Redis with atomic Lua or INCR + EXPIRE",
+   "deepDives": "Distributed counts, race conditions, sliding window accuracy, returning 429 with retry headers",
+   "planDay": "6",
+   "book": "Vol 1 ch. 4"
+  },
+  {
+   "name": "News feed",
+   "insight": "Hybrid fan-out: push to followers' feed caches, pull for celebrities",
+   "deepDives": "Feed cache layout, ranking, pagination by cursor, fan-out workers on a queue",
+   "planDay": "8",
+   "book": "Vol 1 ch. 11"
+  },
+  {
+   "name": "Chat (WhatsApp)",
+   "insight": "Stateful WebSocket servers plus a service that maps user to connection",
+   "deepDives": "Message ordering per conversation, delivery and read receipts, offline sync, group fan-out, presence",
+   "planDay": "9",
+   "book": "Vol 1 ch. 12"
+  },
+  {
+   "name": "Notification system",
+   "insight": "Queue per channel (push, SMS, email) with workers calling third-party providers",
+   "deepDives": "Retries and dead-letter queue, idempotency, user preferences, rate limits per user",
+   "planDay": "10",
+   "book": "Vol 1 ch. 10"
+  },
+  {
+   "name": "Ride hailing (Uber)",
+   "insight": "Driver locations in a geo-index (geohash or quadtree) held in memory, updated every few seconds",
+   "deepDives": "Matching, surge pricing, location write volume, trip state machine",
+   "planDay": "11",
+   "book": "Vol 2 ch. 1–3"
+  },
+  {
+   "name": "Video streaming (YouTube)",
+   "insight": "Upload to object storage → transcoding pipeline (DAG of tasks) → CDN with adaptive bitrate",
+   "deepDives": "Pre-signed upload URLs, resumable uploads, CDN cost vs popularity, view counts",
+   "planDay": "12",
+   "book": "Vol 1 ch. 14"
+  },
+  {
+   "name": "Search autocomplete",
+   "insight": "Trie of top-K suggestions per prefix, rebuilt offline from query logs",
+   "deepDives": "Trie storage and sharding, update frequency, client debouncing, browser cache",
+   "planDay": "13",
+   "book": "Vol 1 ch. 13"
+  },
+  {
+   "name": "Distributed cache",
+   "insight": "Consistent hashing across nodes, replication for availability",
+   "deepDives": "Eviction, hot keys, cache stampede, write strategy",
+   "planDay": "14",
+   "book": "Vol 1 ch. 5–6"
+  },
+  {
+   "name": "Ticket booking (BookMyShow)",
+   "insight": "Temporary seat hold with a TTL, then confirm on payment",
+   "deepDives": "Double-booking prevention (row locks, optimistic concurrency), flash-sale traffic, waiting room",
+   "planDay": "15",
+   "book": "Vol 2 ch. 7"
+  },
+  {
+   "name": "Payment system",
+   "insight": "Idempotent API plus a double-entry ledger; payment service orchestrates a third-party processor",
+   "deepDives": "Retries, reconciliation, exactly-once effects, state machine, handling processor timeouts",
+   "planDay": "16",
+   "book": "Vol 2 ch. 11"
+  },
+  {
+   "name": "Key-value store",
+   "insight": "Dynamo style: consistent hashing, replication factor N, tunable quorum W + R > N",
+   "deepDives": "Vector clocks, hinted handoff, Merkle-tree repair, gossip, LSM storage engine",
+   "planDay": "17",
+   "book": "Vol 1 ch. 6"
+  },
+  {
+   "name": "Unique ID generator",
+   "insight": "Snowflake: timestamp + datacenter + machine + sequence",
+   "deepDives": "Clock skew, sequence overflow, sortability",
+   "planDay": "4–5",
+   "book": "Vol 1 ch. 7"
+  },
+  {
+   "name": "Web crawler",
+   "insight": "BFS frontier in queues with politeness per host",
+   "deepDives": "URL dedupe (Bloom filter), content dedupe, robots.txt, traps",
+   "planDay": "Stretch",
+   "book": "Vol 1 ch. 9"
+  },
+  {
+   "name": "Google Drive / Dropbox",
+   "insight": "Split files into blocks, upload only changed blocks, metadata in SQL",
+   "deepDives": "Sync conflicts, notification of changes, storage tiering",
+   "planDay": "Stretch",
+   "book": "Vol 1 ch. 15"
+  },
+  {
+   "name": "Leaderboard",
+   "insight": "Redis sorted sets for real-time rank",
+   "deepDives": "Sharding by score range, ties, top-K vs a user's own rank",
+   "planDay": "Stretch",
+   "book": "Vol 2 ch. 10"
+  }
+ ],
+ "checklist": [
+  "I can run the 7-step framework from memory with time checkpoints",
+  "I can state the main trade-off for every row in Core principles",
+  "I can do a back-of-envelope estimate in under 5 minutes",
+  "I have drawn all 13 planned designs at least once out loud",
+  "I can explain 2 deep dives for each of those designs",
+  "I have coded 4 LLD problems end to end",
+  "I have 2 work projects ready to discuss at design depth"
+ ]
+}

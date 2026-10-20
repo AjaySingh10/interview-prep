@@ -2,7 +2,7 @@
 
 105 problems: all 75 from the default [Grind 75](https://www.techinterviewhandbook.org/grind75/) list plus 30 extras that fill pattern gaps (monotonic stack, union-find, Dijkstra, LIS/LCS/edit distance, greedy) and Week 3 mixed practice.
 
-Tick a box as you solve (edit on GitHub: change `☐` to `✅`). Easy problems are warm-ups at 5.5 YOE: if the solution is obvious, code it fast or skip it. Status, time and mistake notes live in [`tracker/interview_prep_tracker.xlsx`](../tracker/interview_prep_tracker.xlsx).
+Track progress in the [tracker](../tracker/) (status, time, notes and redo dates). Easy problems are warm-ups at 5.5 YOE: if the solution is obvious, code it fast or skip it. Status, time and mistake notes live in [`tracker/interview_prep_tracker.xlsx`](../tracker/interview_prep_tracker.xlsx).
 
 > LeetCode links were built from problem slugs from memory; fix any that 404.
 
