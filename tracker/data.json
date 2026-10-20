@@ -13,7 +13,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 3](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=42), [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=5) (first half); this guide §2–3"
+   "read": "Vol 1 [ch. 3](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch03-a-framework-for-system-design-interviews.pdf), [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch01-scale-from-zero-to-millions-of-users.pdf) (first half); this guide §2–3"
   },
   {
    "day": 2,
@@ -27,7 +27,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=5) (cache, CDN); §3"
+   "read": "Vol 1 [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch01-scale-from-zero-to-millions-of-users.pdf) (cache, CDN); §3"
   },
   {
    "day": 3,
@@ -41,7 +41,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=5) (database); DDIA ch. 3 (optional)"
+   "read": "Vol 1 [ch. 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch01-scale-from-zero-to-millions-of-users.pdf) (database); DDIA ch. 3 (optional)"
   },
   {
    "day": 4,
@@ -56,7 +56,7 @@
    ],
    "other": [],
    "hours": 7.0,
-   "read": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=71)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=87); Vol 2 ch. 4 (skim)"
+   "read": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch05-design-consistent-hashing.pdf)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch06-design-a-key-value-store.pdf); Vol 2 ch. 4 (skim)"
   },
   {
    "day": 5,
@@ -71,7 +71,7 @@
    ],
    "other": [],
    "hours": 7.0,
-   "read": "Vol 1 [ch. 2](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=34), [7](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=110), [8](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=119)"
+   "read": "Vol 1 [ch. 2](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch02-back-of-the-envelope-estimation.pdf), [7](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch07-design-a-unique-id-generator-in-distributed-systems.pdf), [8](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch08-design-a-url-shortener.pdf)"
   },
   {
    "day": 6,
@@ -85,7 +85,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 4](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=51)"
+   "read": "Vol 1 [ch. 4](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch04-design-a-rate-limiter.pdf)"
   },
   {
    "day": 7,
@@ -113,7 +113,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 11](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=166); §4 fan-out"
+   "read": "Vol 1 [ch. 11](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch11-design-a-news-feed-system.pdf); §4 fan-out"
   },
   {
    "day": 9,
@@ -127,7 +127,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 12](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=178)"
+   "read": "Vol 1 [ch. 12](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch12-design-a-chat-system.pdf)"
   },
   {
    "day": 10,
@@ -141,7 +141,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 10](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=151); §4 reliability patterns"
+   "read": "Vol 1 [ch. 10](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch10-design-a-notification-system.pdf); §4 reliability patterns"
   },
   {
    "day": 11,
@@ -171,7 +171,7 @@
    ],
    "other": [],
    "hours": 7.0,
-   "read": "Vol 1 [ch. 14](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=220)"
+   "read": "Vol 1 [ch. 14](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch14-design-youtube.pdf)"
   },
   {
    "day": 13,
@@ -185,7 +185,7 @@
    ],
    "other": [],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 13](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=200)"
+   "read": "Vol 1 [ch. 13](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch13-design-a-search-autocomplete-system.pdf)"
   },
   {
    "day": 14,
@@ -201,7 +201,7 @@
     "Project deep-dive #1"
    ],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=71)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=87) (re-read deep dives)"
+   "read": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch05-design-consistent-hashing.pdf)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch06-design-a-key-value-store.pdf) (re-read deep dives)"
   },
   {
    "day": 15,
@@ -249,7 +249,7 @@
     "STAR stories"
    ],
    "hours": 3.5,
-   "read": "Vol 1 [ch. 6](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=87)"
+   "read": "Vol 1 [ch. 6](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch06-design-a-key-value-store.pdf)"
   },
   {
    "day": 18,
@@ -1267,35 +1267,35 @@
    "insight": "Read-heavy (~100:1); short code via base62 of a unique ID beats hashing plus collision checks",
    "deepDives": "301 vs 302 redirects, cache hot links, ID generation, analytics via async events",
    "planDay": "5",
-   "book": "Vol 1 [ch. 8](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=119)"
+   "book": "Vol 1 [ch. 8](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch08-design-a-url-shortener.pdf)"
   },
   {
    "name": "Rate limiter",
    "insight": "Token bucket in Redis with atomic Lua or INCR + EXPIRE",
    "deepDives": "Distributed counts, race conditions, sliding window accuracy, returning 429 with retry headers",
    "planDay": "6",
-   "book": "Vol 1 [ch. 4](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=51)"
+   "book": "Vol 1 [ch. 4](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch04-design-a-rate-limiter.pdf)"
   },
   {
    "name": "News feed",
    "insight": "Hybrid fan-out: push to followers' feed caches, pull for celebrities",
    "deepDives": "Feed cache layout, ranking, pagination by cursor, fan-out workers on a queue",
    "planDay": "8",
-   "book": "Vol 1 [ch. 11](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=166)"
+   "book": "Vol 1 [ch. 11](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch11-design-a-news-feed-system.pdf)"
   },
   {
    "name": "Chat (WhatsApp)",
    "insight": "Stateful WebSocket servers plus a service that maps user to connection",
    "deepDives": "Message ordering per conversation, delivery and read receipts, offline sync, group fan-out, presence",
    "planDay": "9",
-   "book": "Vol 1 [ch. 12](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=178)"
+   "book": "Vol 1 [ch. 12](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch12-design-a-chat-system.pdf)"
   },
   {
    "name": "Notification system",
    "insight": "Queue per channel (push, SMS, email) with workers calling third-party providers",
    "deepDives": "Retries and dead-letter queue, idempotency, user preferences, rate limits per user",
    "planDay": "10",
-   "book": "Vol 1 [ch. 10](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=151)"
+   "book": "Vol 1 [ch. 10](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch10-design-a-notification-system.pdf)"
   },
   {
    "name": "Ride hailing (Uber)",
@@ -1309,21 +1309,21 @@
    "insight": "Upload to object storage → transcoding pipeline (DAG of tasks) → CDN with adaptive bitrate",
    "deepDives": "Pre-signed upload URLs, resumable uploads, CDN cost vs popularity, view counts",
    "planDay": "12",
-   "book": "Vol 1 [ch. 14](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=220)"
+   "book": "Vol 1 [ch. 14](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch14-design-youtube.pdf)"
   },
   {
    "name": "Search autocomplete",
    "insight": "Trie of top-K suggestions per prefix, rebuilt offline from query logs",
    "deepDives": "Trie storage and sharding, update frequency, client debouncing, browser cache",
    "planDay": "13",
-   "book": "Vol 1 [ch. 13](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=200)"
+   "book": "Vol 1 [ch. 13](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch13-design-a-search-autocomplete-system.pdf)"
   },
   {
    "name": "Distributed cache",
    "insight": "Consistent hashing across nodes, replication for availability",
    "deepDives": "Eviction, hot keys, cache stampede, write strategy",
    "planDay": "14",
-   "book": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=71)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=87)"
+   "book": "Vol 1 [ch. 5](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch05-design-consistent-hashing.pdf)–[6](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch06-design-a-key-value-store.pdf)"
   },
   {
    "name": "Ticket booking (BookMyShow)",
@@ -1344,28 +1344,28 @@
    "insight": "Dynamo style: consistent hashing, replication factor N, tunable quorum W + R > N",
    "deepDives": "Vector clocks, hinted handoff, Merkle-tree repair, gossip, LSM storage engine",
    "planDay": "17",
-   "book": "Vol 1 [ch. 6](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=87)"
+   "book": "Vol 1 [ch. 6](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch06-design-a-key-value-store.pdf)"
   },
   {
    "name": "Unique ID generator",
    "insight": "Snowflake: timestamp + datacenter + machine + sequence",
    "deepDives": "Clock skew, sequence overflow, sortability",
    "planDay": "4–5",
-   "book": "Vol 1 [ch. 7](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=110)"
+   "book": "Vol 1 [ch. 7](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch07-design-a-unique-id-generator-in-distributed-systems.pdf)"
   },
   {
    "name": "Web crawler",
    "insight": "BFS frontier in queues with politeness per host",
    "deepDives": "URL dedupe (Bloom filter), content dedupe, robots.txt, traps",
    "planDay": "Stretch",
-   "book": "Vol 1 [ch. 9](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=132)"
+   "book": "Vol 1 [ch. 9](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch09-design-a-web-crawler.pdf)"
   },
   {
    "name": "Google Drive / Dropbox",
    "insight": "Split files into blocks, upload only changed blocks, metadata in SQL",
    "deepDives": "Sync conflicts, notification of changes, storage tiering",
    "planDay": "Stretch",
-   "book": "Vol 1 [ch. 15](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf#page=244)"
+   "book": "Vol 1 [ch. 15](https://github.com/AjaySingh10/interview-prep-books/blob/main/chapters/ch15-design-google-drive.pdf)"
   },
   {
    "name": "Leaderboard",

@@ -1,53 +1,22 @@
-// Shared by every page: links open in a new tab, book links jump to the right PDF page,
+// Shared by every page: links open in a new tab, book links get a 📖 and a tooltip,
 // and long pages get a table of contents.
 (function () {
-  const BOOK = "https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf";
-  const BOOK_API = "https://api.github.com/repos/AjaySingh10/interview-prep-books/contents/system-design-interview-vol1.pdf";
-  const token = () => { try { return localStorage.getItem("iprep.token") || ""; } catch { return ""; } };
-
-  // The book is in a private repo. With the tracker's GitHub token we download it once
-  // (cached in the browser) and open it at the exact page; without one, GitHub's viewer opens.
-  let bookUrl = null;
-  async function loadBook() {
-    if (bookUrl) return bookUrl;
-    const cache = "caches" in window ? await caches.open("iprep-books").catch(() => null) : null;
-    let res = cache && await cache.match(BOOK_API);
-    if (!res) {
-      res = await fetch(BOOK_API, { headers: { Authorization: `Bearer ${token()}`, Accept: "application/vnd.github.raw" } });
-      if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
-      if (cache) await cache.put(BOOK_API, res.clone()).catch(() => {});
-    }
-    bookUrl = URL.createObjectURL(new Blob([await res.arrayBuffer()], { type: "application/pdf" }));
-    return bookUrl;
-  }
-  function openBook(page) {
-    const win = window.open("", "_blank");
-    if (!win) return false;
-    win.document.title = "Opening book…";
-    win.document.body.innerHTML = `<p style="font:16px system-ui,sans-serif;padding:24px">Opening the book${page ? ` at page ${page}` : ""}…</p>`;
-    loadBook()
-      .then(url => { win.location.href = url + (page ? `#page=${page}` : ""); })
-      .catch(() => { win.location.href = BOOK; });
-    return true;
-  }
+  // Book chapters live in a private repo, so these links only open for the owner.
+  const BOOKS = "https://github.com/AjaySingh10/interview-prep-books/blob/main/";
 
   document.addEventListener("click", e => {
     const a = e.target.closest("a[href]");
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     if (a.getAttribute("href").startsWith("#")) return;
-    if (a.href.startsWith(BOOK) && token()) {
-      const page = (a.hash.match(/page=(\d+)/) || [])[1];
-      if (openBook(page)) { e.preventDefault(); return; }
-    }
     a.target = "_blank";
     a.rel = "noopener";
   });
 
   function decorate(root) {
-    for (const a of root.querySelectorAll(`a[href^="${BOOK}"]:not(.card)`)) {
-      const page = (a.hash.match(/page=(\d+)/) || [])[1];
+    for (const a of root.querySelectorAll(`a[href^="${BOOKS}"]:not(.card):not(.book-link)`)) {
+      const ch = (a.pathname.match(/\/ch(\d+)-/) || [])[1];
       a.classList.add("book-link");
-      a.title = `Alex Xu Vol 1${page ? `, page ${page}` : ""} (private — opens for you only)`;
+      a.title = `Alex Xu Vol 1${ch ? `, chapter ${+ch}` : ""} (private — opens for you only)`;
     }
   }
 
