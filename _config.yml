@@ -1,6 +1,12 @@
 title: Interview Prep — SDE2 → Senior
 description: 3-week DSA and system design plan
-theme: jekyll-theme-cayman
+book_url: https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf
 exclude:
   - scripts
+  - "*.pdf"
   - interview-prep-repo.zip
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

@@ -2,12 +2,10 @@
 
 A focused 3-week plan to switch jobs as an SDE2 with 5.5 years of experience, covering **DSA** and **system design** (HLD + LLD). Runs **Wed 21 Oct → Tue 10 Nov 2026**.
 
-**Pages:** [Progress tracker](tracker/) · [DSA problem list](dsa/) · [System design crash course](system-design/)
-
 | | |
 | --- | --- |
 | **DSA** | 105 problems — all of [Grind 75](https://www.techinterviewhandbook.org/grind75/) + 30 extras, grouped by pattern → [`dsa/PROBLEMS.md`](dsa/PROBLEMS.md) |
-| **System design** | Crash course mapped to Alex Xu Vol 1 & 2 → [`system-design/CRASH_COURSE.md`](system-design/CRASH_COURSE.md) |
+| **System design** | Crash course mapped to Alex Xu [Vol 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf) & 2 → [`system-design/CRASH_COURSE.md`](system-design/CRASH_COURSE.md) |
 | **Tracker** | Interactive web tracker (status, time, notes, redo queue, hours, synced to GitHub) → [tracker](tracker/); the original Excel is still in [`tracker/interview_prep_tracker.xlsx`](tracker/interview_prep_tracker.xlsx) |
 | **Time budget** | ~3.5 h on weekdays, ~7 h on weekends (~94 h total), roughly 50/50 DSA vs design |
 
@@ -98,7 +96,7 @@ Mixed timed DSA, the remaining HLD problems, LLD in 60–90 minute sittings, thr
 ## Resources
 
 - [Grind 75](https://www.techinterviewhandbook.org/grind75/) — the DSA backbone
-- *System Design Interview* Vol 1 (Alex Xu) and Vol 2 (Alex Xu & Sahn Lam) — worked design walkthroughs
+- [*System Design Interview* Vol 1](https://github.com/AjaySingh10/interview-prep-books/blob/main/system-design-interview-vol1.pdf) (Alex Xu; private PDF, opens for you only) and Vol 2 (Alex Xu & Sahn Lam) — worked design walkthroughs
 - *Designing Data-Intensive Applications* (Martin Kleppmann) — selective reading on replication, partitioning, consistency
 - Pramp, interviewing.io, or peers — mock interviews
 
