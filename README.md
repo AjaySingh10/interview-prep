@@ -100,7 +100,7 @@ Mixed timed DSA, the remaining HLD problems, LLD in 60–90 minute sittings, thr
 - *Designing Data-Intensive Applications* (Martin Kleppmann) — selective reading on replication, partitioning, consistency
 - Pramp, interviewing.io, or peers — mock interviews
 
-> Book chapter numbers and LeetCode links were written from memory; verify against your copies and fix any link that 404s.
+> Vol 1 chapter numbers are checked against the book. Vol 2 chapter numbers and LeetCode links were written from memory; verify them and fix any link that 404s.
 
 ## Using this repo
 

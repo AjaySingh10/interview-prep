@@ -44,7 +44,7 @@
   });
 
   function decorate(root) {
-    for (const a of root.querySelectorAll(`a[href^="${BOOK}"]`)) {
+    for (const a of root.querySelectorAll(`a[href^="${BOOK}"]:not(.card)`)) {
       const page = (a.hash.match(/page=(\d+)/) || [])[1];
       a.classList.add("book-link");
       a.title = `Alex Xu Vol 1${page ? `, page ${page}` : ""} (private — opens for you only)`;
@@ -59,11 +59,18 @@
       const wrap = document.createElement("div");
       wrap.className = "table-wrap";
       t.replaceWith(wrap); wrap.appendChild(t);
+      const head = t.querySelector("thead");
+      if (head && !head.textContent.trim()) head.remove();
     }
     const heads = [...content.querySelectorAll("h2[id], h3[id]")];
     if (heads.length < 4) return;
     toc.innerHTML = heads.map(h => `<a href="#${h.id}" class="${h.tagName.toLowerCase()}">${h.textContent}</a>`).join("");
-    document.querySelector(".toc").hidden = false;
+    const aside = document.querySelector(".toc");
+    aside.hidden = false;
+    aside.querySelector(".toc-title").addEventListener("click", e => {
+      e.currentTarget.setAttribute("aria-expanded", aside.classList.toggle("open"));
+    });
+    toc.addEventListener("click", e => { if (e.target.closest("a")) aside.classList.remove("open"); });
     document.body.classList.add("has-toc");
     const links = new Map([...toc.querySelectorAll("a")].map(a => [a.getAttribute("href").slice(1), a]));
     const seen = new IntersectionObserver(entries => {

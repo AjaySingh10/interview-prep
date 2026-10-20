@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 <script src="{{ '/assets/site.js' | relative_url }}" defer></script>
 </head>
-<body>
+<body class="{% if page.url == "/" %}home{% endif %}">
 <header class="site-header">
   <div class="bar">
     <a class="brand" href="{{ '/' | relative_url }}">Interview Prep</a>
@@ -38,7 +38,7 @@
 {% endif %}
 
 <div class="layout">
-  <aside class="toc" hidden><div class="toc-inner"><div class="toc-title">On this page</div><nav id="toc"></nav></div></aside>
+  <aside class="toc" hidden><div class="toc-inner"><button class="toc-title" type="button" aria-expanded="false">On this page</button><nav id="toc"></nav></div></aside>
   <main class="page-content">
     {{ content }}
   </main>

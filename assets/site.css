@@ -38,7 +38,7 @@ body.has-toc .layout { display: grid; grid-template-columns: 250px minmax(0, 1fr
 body.has-toc .toc { display: block; }
 .toc[hidden] { display: none; }
 .toc-inner { position: sticky; top: 76px; max-height: calc(100vh - 96px); overflow-y: auto; font-size: 14px; border-left: 2px solid var(--line); padding-left: 14px; }
-.toc-title { font-weight: 650; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.toc-title { display: block; background: none; border: 0; padding: 0; cursor: default; font-family: inherit; font-weight: 650; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
 .toc a { display: block; color: var(--muted); text-decoration: none; padding: 3px 0; line-height: 1.35; }
 .toc a.h3 { padding-left: 12px; font-size: 13px; }
 .toc a:hover, .toc a.on { color: var(--accent); }
@@ -62,6 +62,8 @@ body.has-toc .toc { display: block; }
 .page-content th { background: var(--soft); text-align: left; font-weight: 650; border-top: 0; white-space: nowrap; }
 .page-content tbody tr:hover td { background: var(--soft); }
 .page-content .task-list-item { list-style: none; margin-left: -20px; }
+body.home .page-content > h1:first-child { display: none; }
+body.home .page-content > p:first-of-type { margin-top: 0; }
 a.book-link::after { content: " 📖"; font-size: .85em; }
 
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; text-align: center; padding: 20px 16px 32px; }
@@ -69,7 +71,11 @@ a.book-link::after { content: " 📖"; font-size: .85em; }
 @media (max-width: 1000px) {
   body.has-toc .layout { display: block; }
   .toc-inner { position: static; max-height: none; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
-  .toc nav { max-height: 240px; overflow-y: auto; }
+  .toc-title { cursor: pointer; margin: 0; width: 100%; text-align: left; }
+  .toc-title::after { content: " ▾"; }
+  .toc.open .toc-title::after { content: " ▴"; }
+  .toc nav { display: none; max-height: 300px; overflow-y: auto; margin-top: 8px; }
+  .toc.open nav { display: block; }
 }
 @media (max-width: 600px) {
   .hero { padding: 28px 0 24px; }

@@ -1,6 +1,6 @@
 # System Design Crash Course — 3-Week Prep
 
-> Exported from the Claude Doc version of this guide. Alex Xu chapter numbers are from memory; check them against your copy's table of contents.
+> Exported from the Claude Doc version of this guide. Vol 1 chapter numbers are checked against the book; Vol 2 chapter numbers are from memory, so check them against your copy.
 
 ## Contents
 
